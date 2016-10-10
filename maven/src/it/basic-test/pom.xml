@@ -1,0 +1,13 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.blackbuild.tools.cliwrapper.maven.it</groupId>
+    <artifactId>dummy-parent</artifactId>
+    <version>@project.version@</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>plugin</module>
+        <module>user</module>
+    </modules>
+</project>
+

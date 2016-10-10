@@ -1,0 +1,37 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.blackbuild.tools.cliwrapper.maven.it</groupId>
+    <artifactId>cliwrappertest-consumer</artifactId>
+    <version>@project.version@</version>
+    <packaging>pom</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.blackbuild.tools.cliwrapper.maven.it</groupId>
+                <artifactId>cliwrappertest-maven-plugin</artifactId>
+                <version>@project.version@</version>
+                <configuration>
+                    <filter>myfilter</filter>
+                    <includes>
+                        <include>bla</include>
+                        <include>blub</include>
+                    </includes>
+                    <properties>
+                        <one>value</one>
+                        <two>another</two>
+                    </properties>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>test</id>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
