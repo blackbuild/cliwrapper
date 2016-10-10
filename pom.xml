@@ -4,7 +4,7 @@
 
     <groupId>com.blackbuild.tools.cliwrapper</groupId>
     <artifactId>cliwrapper</artifactId>
-    <version>0.1.5-SNAPSHOT</version>
+    <version>0.1.5</version>
     <packaging>pom</packaging>
 
     <name>Cli Argument Wrapper</name>
@@ -20,7 +20,7 @@
         <connection>scm:git:https://github.com/blackbuild/cliwrapper</connection>
         <developerConnection>scm:git:https://github.com/blackbuild/cliwrapper</developerConnection>
         <url>https://github.com/blackbuild/cliwrapper</url>
-        <tag>HEAD</tag>
+        <tag>cliwrapper-0.1.5</tag>
     </scm>
 
     <licenses>
