@@ -24,21 +24,25 @@ public @interface CliArgsParameter {
     public ArgumentType type() default ArgumentType.LONG;
 
     /**
-     * Optional delimiter of the values for multi value parameter. If <code>""</code>, multivalues are added as multiple arguments. This
-     * is only valid for collection type fields.<br/>
+     * <p>Optional delimiter of the values for multi value parameter. If <code>""</code>, multivalues are added as multiple arguments. This
+     * is only valid for collection type fields.</p>
      *
-     * examples:<br/>
-     * fieldname: example, values: { 'bla', blub' }, delimiter: ',' -> --example bla,blub<br/>
-     * fieldname: example, values: { 'bla', blub' }, delimiter: <code>null</code> -> --example bla --example blub<br/>
+     * <p>examples:</p>
+     * <ul>
+     * <li>fieldname: example, values: { 'bla', blub' }, delimiter: ',' : --example bla,blub</li>
+     * <li>fieldname: example, values: { 'bla', blub' }, delimiter: <code>null</code> : --example bla --example blub</li>
+     * </ul>
      */
     public String delimiter() default "";
 
     /**
      * If the annotated field is a Map, this is used to construct key value pairs. Default is '='.
      *
-     * examples (argument value: entry, delimiter: <code>null</code>)<br/>
-     * values: { 'bla => bli', blub => blob' }, assignment: '=' -> --entry bla=bli --entry blub=blob<br/>
-     * values: { 'bla => bli', blub => blob' }, assignment: null -> --entry bla bli --entry blub blob<br/>
+     * <p>examples (argument value: entry, delimiter: <code>null</code>)</p>
+     * <ul>
+     * <li>values: { 'bla: bli', blub: blob' }, assignment: '=' : --entry bla=bli --entry blub=blob</li>
+     * <li>values: { 'bla: bli', blub: blob' }, assignment: null : --entry bla bli --entry blub blob</li>
+     * </ul>
      */
     public String assignment() default "=";
 }
