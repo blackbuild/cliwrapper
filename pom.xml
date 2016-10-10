@@ -4,7 +4,7 @@
 
     <groupId>com.blackbuild.tools.cliwrapper</groupId>
     <artifactId>cliwrapper</artifactId>
-    <version>0.1.3</version>
+    <version>0.1.4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -14,7 +14,7 @@
 
     <scm>
         <connection>scm:git:https://github.com/blackbuild/cliwrapper</connection>
-      <tag>cliwrapper-0.1.3</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <build>
