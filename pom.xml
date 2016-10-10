@@ -7,6 +7,10 @@
     <version>0.1.5-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <name>Cli Argument Wrapper</name>
+    <description>Provides easy wrapping of the arguments for a CLI or Groovy script in a bean</description>
+    <url>https://github.com/blackbuild/cliwrapper</url>
+
     <modules>
         <module>core</module>
         <module>maven</module>
