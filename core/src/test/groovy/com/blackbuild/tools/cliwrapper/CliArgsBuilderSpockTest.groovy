@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 import static java.util.regex.Pattern.quote
 
-class CliBuilderSpockTest extends Specification {
+class CliArgsBuilderSpockTest extends Specification {
 
     def bean
     List cliArguments
@@ -27,7 +27,7 @@ class CliBuilderSpockTest extends Specification {
         when:
         createCliArguments()
         then:
-        thrown(CliBuilderException)
+        thrown(CliArgsBuilderException)
     }
 
     def "test complex object"() {
@@ -62,20 +62,20 @@ class CliBuilderSpockTest extends Specification {
         when:
         createCliArguments()
         then:
-        thrown(CliBuilderException)
+        thrown(CliArgsBuilderException)
     }
 
     def createCliArguments() {
-        cliArguments = new CliBuilder(bean).createArguments()
+        cliArguments = new CliArgsBuilder(bean).createArguments()
     }
 
 
     @SuppressWarnings("UnusedDeclaration")
     public static class ObjectWithTwoDefaultValues {
-        @CliBuilderParameter(type=ArgumentType.DEFAULT)
+        @CliArgsParameter(type=ArgumentType.DEFAULT)
         private String def1;
 
-        @CliBuilderParameter(type=ArgumentType.DEFAULT)
+        @CliArgsParameter(type=ArgumentType.DEFAULT)
         private String def2;
 
         public void setDef1(String def1) {
@@ -89,10 +89,10 @@ class CliBuilderSpockTest extends Specification {
 
     @SuppressWarnings("UnusedDeclaration")
     public static class ObjectWithTwoIdenticalArguments {
-        @CliBuilderParameter(argument="arg")
+        @CliArgsParameter(argument="arg")
         private String def1;
 
-        @CliBuilderParameter(argument="arg")
+        @CliArgsParameter(argument="arg")
         private String def2;
 
         public void setDef1(String def1) {

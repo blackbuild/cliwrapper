@@ -20,7 +20,7 @@ class CliField {
 
     private final Field field;
 
-    private final CliBuilderParameter annotation;
+    private final CliArgsParameter annotation;
 
     private final Method method;
 
@@ -31,7 +31,7 @@ class CliField {
         this.field = field;
         field.setAccessible(true);
         this.method = null;
-        this.annotation = field.getAnnotation(CliBuilderParameter.class);
+        this.annotation = field.getAnnotation(CliArgsParameter.class);
 
         try {
             rawValue = field.get(this.bean);
@@ -44,7 +44,7 @@ class CliField {
         this.bean = bean;
         this.method = method;
         this.field = null;
-        this.annotation = method.getAnnotation(CliBuilderParameter.class);
+        this.annotation = method.getAnnotation(CliArgsParameter.class);
 
         try {
             rawValue = method.invoke(this.bean);

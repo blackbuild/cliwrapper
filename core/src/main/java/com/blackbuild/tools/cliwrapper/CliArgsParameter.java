@@ -6,11 +6,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Marks the parameter as parameter to be passed to the Groovy CliBuilder.
+ * Marks the parameter as parameter to be passed to the Groovy CliArgsBuilder.
  */
 @Target({ElementType.FIELD, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface CliBuilderParameter {
+public @interface CliArgsParameter {
 
     /**
      * The name of the corresponding cli parameter. If empty, defaults to the -- or - (depending on the value of type)

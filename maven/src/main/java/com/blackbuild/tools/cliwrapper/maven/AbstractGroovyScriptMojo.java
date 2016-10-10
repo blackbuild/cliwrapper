@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * Helper class for a groovy script based mojo. Generates s script instance from the given script (as classloader resource),
- * converts fields of the implementing mojo (usually Parameter fields) annotated with CliBuilderParameter to an argument
+ * converts fields of the implementing mojo (usually Parameter fields) annotated with CliArgsBuilderParameter to an argument
  * array which is then passed to the script.
  *
  * This class contains hook methods for preParsing (before any parsing is done), adjustArguments (after parsing but before

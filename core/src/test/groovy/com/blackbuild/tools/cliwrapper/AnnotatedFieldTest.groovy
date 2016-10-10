@@ -19,23 +19,23 @@ class AnnotatedFieldTest extends Specification {
 
         where:
         definition                                                     | value            || result
-        '@CliBuilderParameter String string'                           | 'value'          || ['--string', 'value']
-        '@CliBuilderParameter(type=DEFAULT) String defaultarg'         | 'value'          || ['value']
-        '@CliBuilderParameter(argument="-", type=DEFAULT) String dash' | 'value'          || ['-', 'value']
-        '@CliBuilderParameter(argument="override") String renamed'     | 'bla'            || ['--override', 'bla']
-        '@CliBuilderParameter String[] array'                          | [ 'bla', 'blub'] || ["--array", "bla", "--array", "blub"]
-        '@CliBuilderParameter List<String> list'                       | [ 'bla', 'blub'] || ["--list", "bla", "--list", "blub"]
-        '@CliBuilderParameter(delimiter=",") List<String> commaList'   | [ 'bla', 'blub'] || ["--commaList", "bla,blub"]
-        '@CliBuilderParameter(delimiter=" ") List<String> spaceList'   | [ 'bla', 'blub'] || ["--spaceList", "bla", "blub"]
+        '@CliArgsParameter String string'                           | 'value'          || ['--string', 'value']
+        '@CliArgsParameter(type=DEFAULT) String defaultarg'         | 'value'          || ['value']
+        '@CliArgsParameter(argument="-", type=DEFAULT) String dash' | 'value'          || ['-', 'value']
+        '@CliArgsParameter(argument="override") String renamed'     | 'bla'            || ['--override', 'bla']
+        '@CliArgsParameter String[] array'                          | [ 'bla', 'blub'] || ["--array", "bla", "--array", "blub"]
+        '@CliArgsParameter List<String> list'                       | [ 'bla', 'blub'] || ["--list", "bla", "--list", "blub"]
+        '@CliArgsParameter(delimiter=",") List<String> commaList'   | [ 'bla', 'blub'] || ["--commaList", "bla,blub"]
+        '@CliArgsParameter(delimiter=" ") List<String> spaceList'   | [ 'bla', 'blub'] || ["--spaceList", "bla", "blub"]
 
-        '@CliBuilderParameter File file'                               | new File("/tmp/test/")      || [ "--file", new File("/tmp/test/").toString() ]
-        '@CliBuilderParameter Map map'                                 | [ bla : 'blu', bli : 'blo'] || ["--map", "bla=blu", "--map", "bli=blo"]
-        '@CliBuilderParameter(assignment=" ") Map spaceAssignedMap'    | [ bla : 'blu', bli : 'blo'] || ["--spaceAssignedMap", "bla" , "blu", "--spaceAssignedMap", "bli", "blo"]
+        '@CliArgsParameter File file'                               | new File("/tmp/test/")      || [ "--file", new File("/tmp/test/").toString() ]
+        '@CliArgsParameter Map map'                                 | [ bla : 'blu', bli : 'blo'] || ["--map", "bla=blu", "--map", "bli=blo"]
+        '@CliArgsParameter(assignment=" ") Map spaceAssignedMap'    | [ bla : 'blu', bli : 'blo'] || ["--spaceAssignedMap", "bla" , "blu", "--spaceAssignedMap", "bli", "blo"]
     }
 
     def "null field results in an empty cli fragment"() {
         given:
-        aFieldWithDefinitionAndValue( '@CliBuilderParameter String string', null)
+        aFieldWithDefinitionAndValue( '@CliArgsParameter String string', null)
 
         expect:
         !field.cliFragment
@@ -43,7 +43,7 @@ class AnnotatedFieldTest extends Specification {
 
     def aFieldWithDefinitionAndValue(String definition, value) {
         bean = loader.parseClass(
-                """import com.blackbuild.tools.cliwrapper.CliBuilderParameter
+                """import com.blackbuild.tools.cliwrapper.CliArgsParameter
                 import static com.blackbuild.tools.cliwrapper.ArgumentType.*
                 public class TestBean {
                     $definition

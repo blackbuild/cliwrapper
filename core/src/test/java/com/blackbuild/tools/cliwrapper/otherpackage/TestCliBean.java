@@ -1,7 +1,7 @@
 package com.blackbuild.tools.cliwrapper.otherpackage;
 
 import com.blackbuild.tools.cliwrapper.ArgumentType;
-import com.blackbuild.tools.cliwrapper.CliBuilderParameter;
+import com.blackbuild.tools.cliwrapper.CliArgsParameter;
 
 import java.io.File;
 import java.util.List;
@@ -13,37 +13,37 @@ import java.util.Map;
 @SuppressWarnings("UnusedDeclaration")
 public class TestCliBean  {
 
-    @CliBuilderParameter
+    @CliArgsParameter
     private String string;
 
-    @CliBuilderParameter(type = ArgumentType.DEFAULT)
+    @CliArgsParameter(type = ArgumentType.DEFAULT)
     private String defaultarg;
 
-    @CliBuilderParameter(argument="override")
+    @CliArgsParameter(argument="override")
     private String renamed;
 
-    @CliBuilderParameter
+    @CliArgsParameter
     private File file;
 
-    @CliBuilderParameter
+    @CliArgsParameter
     private String[] array;
 
-    @CliBuilderParameter
+    @CliArgsParameter
     private List<String> list;
 
-    @CliBuilderParameter(delimiter=",")
+    @CliArgsParameter(delimiter=",")
     private List<String> commaList;
 
-    @CliBuilderParameter(delimiter=" ")
+    @CliArgsParameter(delimiter=" ")
     private List<String> spaceList;
 
-    @CliBuilderParameter
+    @CliArgsParameter
     private List<File> filelist;
 
-    @CliBuilderParameter
+    @CliArgsParameter
     private Map<String, String> map;
 
-    @CliBuilderParameter(assignment=" ")
+    @CliArgsParameter(assignment=" ")
     private Map<String, String> spaceAssignedMap;
 
 

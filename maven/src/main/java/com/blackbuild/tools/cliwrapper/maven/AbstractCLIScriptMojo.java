@@ -1,7 +1,7 @@
 package com.blackbuild.tools.cliwrapper.maven;
 
-import com.blackbuild.tools.cliwrapper.CliBuilder;
-import com.blackbuild.tools.cliwrapper.CliBuilderException;
+import com.blackbuild.tools.cliwrapper.CliArgsBuilder;
+import com.blackbuild.tools.cliwrapper.CliArgsBuilderException;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * Helper class for a groovy script based mojo. Generates s script instance from the given script (as classloader resource),
- * converts fields of the implementing mojo (usually Parameter fields) annotated with CliBuilderParameter to an argument
+ * converts fields of the implementing mojo (usually Parameter fields) annotated with CliArgsParameter to an argument
  * array which is then passed to the script.
  *
  * This class contains hook methods for preParsing (before any parsing is done), adjustArguments (after parsing but before
@@ -42,8 +42,8 @@ public abstract class AbstractCLIScriptMojo extends AbstractMojo {
 
     private List<String> parseArgumentsFromFields() throws MojoExecutionException {
         try {
-            return new CliBuilder(this).createArguments();
-        } catch (CliBuilderException e) {
+            return new CliArgsBuilder(this).createArguments();
+        } catch (CliArgsBuilderException e) {
             throw new MojoExecutionException("Error while building command line.", e);
         }
     }
