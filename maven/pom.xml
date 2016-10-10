@@ -3,7 +3,7 @@
     <parent>
         <artifactId>cliwrapper</artifactId>
         <groupId>com.blackbuild.tools.cliwrapper</groupId>
-        <version>0.1.4-SNAPSHOT</version>
+        <version>0.1.4</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -21,7 +21,7 @@
         <dependency>
             <groupId>com.blackbuild.tools.cliwrapper</groupId>
             <artifactId>cliwrapper-core</artifactId>
-            <version>0.1.4-SNAPSHOT</version>
+            <version>0.1.4</version>
         </dependency>
 
         <dependency>
