@@ -14,8 +14,26 @@
 
     <scm>
         <connection>scm:git:https://github.com/blackbuild/cliwrapper</connection>
-      <tag>HEAD</tag>
-  </scm>
+        <developerConnection>scm:git:https://github.com/blackbuild/cliwrapper</developerConnection>
+        <url>https://github.com/blackbuild/cliwrapper</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Stephan Pauxberger</name>
+            <email>stephan@blackbuild.com</email>
+            <organization>Blackbuild</organization>
+            <organizationUrl>http://github.com/pauxus</organizationUrl>
+        </developer>
+    </developers>
 
     <build>
         <plugins>
