@@ -1,7 +1,7 @@
 package com.blackbuild.tools.cliwrapper.maven.it;
 
 import com.blackbuild.tools.cliwrapper.ArgumentType;
-import com.blackbuild.tools.cliwrapper.CliBuilderParameter;
+import com.blackbuild.tools.cliwrapper.CliArgsParameter;
 import com.blackbuild.tools.cliwrapper.maven.AbstractGroovyScriptMojo;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
@@ -15,19 +15,19 @@ import java.util.Map;
 public class DemoMojo extends AbstractGroovyScriptMojo {
 
     @Parameter(required = true, defaultValue = "${project.build.directory}")
-    @CliBuilderParameter(type = ArgumentType.DEFAULT)
+    @CliArgsParameter(type = ArgumentType.DEFAULT)
     private File outputDirectory;
 
     @Parameter
-    @CliBuilderParameter
+    @CliArgsParameter
     private String filter;
 
     @Parameter
-    @CliBuilderParameter(argument = "include", delimiter = ",")
+    @CliArgsParameter(argument = "include", delimiter = ",")
     private String[] includes;
 
     @Parameter
-    @CliBuilderParameter
+    @CliArgsParameter
     private Map<String, String> properties;
 
     @Override
